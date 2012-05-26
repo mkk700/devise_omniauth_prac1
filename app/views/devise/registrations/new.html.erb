@@ -1,0 +1,49 @@
+<% title 'Register' %>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div>
+	<%= f.label :firstname %><br />
+	<%= f.text_field :firstname %>
+  </div>  
+  
+  <div>
+	<%= f.label :lastname %><br />
+	<%= f.text_field :lastname %>
+  </div> 
+  
+  <div>
+	<%= f.label :sex%>:<br />
+	<%= f.select(:sex,[['Select Sex',nil],['Male','m'],['Female','f']]) %>
+  </div>
+  
+  <div>
+	<%= f.label :birthday%>:<br />
+	<%= f.date_select :birthday, :include_blank => true, :use_short_month => true, :order => [:month,:day, :year], :start_year => 1950 %>
+  </div> 
+  
+  <div>
+	<%= f.label :email %><br />
+	<%= f.email_field :email %>
+  </div>
+  
+  <div>
+	<%= f.label :occupation %><br />
+	<%= f.text_field :occupation %>
+  </div> 
+  
+  <div>
+	<%= f.label :password %><br />
+	<%= f.password_field :password %>
+  </div>
+
+  <div>
+	<%= f.label :password_confirmation %><br />
+	<%= f.password_field :password_confirmation %>
+  </div>
+
+  <div><%= f.submit "Sign up" %></div>
+<% end %>
+
+<%= render "links" %>
