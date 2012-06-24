@@ -7,6 +7,11 @@ gem 'rails', '3.2.2'
 
 gem 'devise'
 gem 'validates_timeliness'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-linkedin'
+gem 'nifty-generators'
 
 group :devleopment do
   gem 'mysql2'
@@ -44,3 +49,5 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+gem "mocha", :group => :test

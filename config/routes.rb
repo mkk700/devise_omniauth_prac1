@@ -1,6 +1,9 @@
 DeviseOmniauthPrac1::Application.routes.draw do
+  resources :authentications
+
   devise_for :users
   root :to => "home#index"
+  match '/auth/:provider/callback' => 'authentications#create'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
